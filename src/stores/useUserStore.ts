@@ -29,7 +29,7 @@ export const useUserStore = create<UserStore>((set) => ({
       const { data, error } = await supabase
         .from("user")
         .select("id, name, email, created_at")
-        .order("created_at", { ascending: false });
+        .order("id", { ascending: true });
 
       if (error) throw error;
       set({ users: data || [], isLoading: false });

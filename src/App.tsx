@@ -6,7 +6,7 @@ export default function App() {
 
   useEffect(() => {
     fetchUsers();
-  }, [fetchUsers]);
+  }, []);
 
   if (isLoading) return <div>Carregando...</div>;
   if (error) return <div>Erro: {error}</div>;
@@ -29,7 +29,7 @@ export default function App() {
               <td>{user.id}</td>
               <td>{user.name}</td>
               <td>{user.email}</td>
-              <td>{new Date(user.created_at).toLocaleDateString()}</td>
+              <td>{new Date(user.created_at).toLocaleDateString("pt-BR")}</td>
             </tr>
           ))}
         </tbody>
